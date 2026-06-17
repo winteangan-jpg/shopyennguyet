@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHOP YẾN NGUYỆT</title>
+    <link rel="stylesheet" href="style.css">
+    <a href="trangchu.html">Trang chủ</a>
+    <a href="sanpham.html">Sản phẩm</a>
+    <a href="lienhe.html">Liên hệ</a>
+</head>
+<body>
+  <header>
+    <div id="header">
+    <h1>Shop yến nguyệt</h1>
+    <p>
+        Chào mừng bạn đến với cửa hàng Yến Nguyệt!
+        Chúng tôi chuyên cung cấp <i>các sản phẩm yến sào</i> <u>chất lượng cao</u> và đa dạng. Hãy ghé thăm và trải nghiệm mua sắm tuyệt vời! 
+    </p>
+    </div>
+</header>
+
+<nav class="navbar" style="background-color: #ffcc00; padding: 15px 20px; display: flex; flex-direction: column; align-items: center;">
+    
+    <div class="search-container" style="margin-bottom: 12px; width: 100%; max-width: 400px; position: relative;">
+        <form action="#" method="GET" style="display: flex; align-items: center; border: 1.5px solid #000000; border-radius: 25px; padding: 6px 15px; background: transparent;">
+            <input type="text" placeholder="Tìm sản phẩm" name="search" style="flex: 1; border: none; background: transparent; outline: none; color: #000000; font-size: 15px; padding-right: 30px;">
+            <button type="submit" style="background: transparent; border: none; color: #000000; cursor: pointer; position: absolute; right: 15px; top: 50%; transform: translateY(-50%); font-size: 16px;">
+                🔍
+            </button>
+        </form>
+    </div>
+
+    <ul class="nav-list" style="list-style: none; margin: 0; padding: 0; display: flex; justify-content: center; gap: 30px; width: 100%;">
+        <li class="nav-item"><a href="trangchu.html" style="text-decoration: none; color: #000000; font-weight: bold;">TRANG CHỦ <span class="arrow">▼</span></a></li>
+        <li class="nav-item"><a href="sanpham.html" style="text-decoration: none; color: #000000; font-weight: bold;">SẢN PHẨM <span class="arrow">▼</span></a></li>
+        <li class="nav-item"><a href="lienhe.html" style="text-decoration: none; color: #000000; font-weight: bold;">LIÊN HỆ <span class="arrow">▼</span></a></li>
+    </ul>
+</nav>
+
+<div class="banner-quangcao" style="width: 100%; max-width: 900px; margin: 20px auto; padding: 0 10px; position: relative; overflow: hidden;">
+    <div class="banner-slider" style="display: flex; width: 300%; height: 300px; transition: transform 0.5s ease-in-out;" id="sliderContainer">
+        <a href="#" style="display: block; width: 100%; height: 100%;">
+            <img src="img/hình yến.png" alt="Banner Quảng Cáo Makeup 1" style="width: 100%; height: 100%; display: block; object-fit: cover;">
+        </a>
+        <a href="#" style="display: block; width: 100%; height: 100%;">
+            <img src="img/hình 1.jpg" alt="Banner Quảng Cáo Makeup 2" style="width: 100%; height: 100%; display: block; object-fit: cover;">
+        </a>
+        <a href="#" style="display: block; width: 100%; height: 100%;">
+            <img src="img/hình 2.jpg" alt="Banner Quảng Cáo Makeup 3" style="width: 100%; height: 100%; display: block; object-fit: cover;">
+        </a>
+    </div>
+
+    <button onclick="prevSlide()" style="position: absolute; top: 50%; left: 20px; transform: translateY(-50%); background: rgba(0,0,0,0.4); color: white; border: none; font-size: 24px; padding: 8px 15px; cursor: pointer; border-radius: 4px; z-index: 10;">&lt;</button>
+    <button onclick="nextSlide()" style="position: absolute; top: 50%; right: 20px; transform: translateY(-50%); background: rgba(0,0,0,0.4); color: white; border: none; font-size: 24px; padding: 8px 15px; cursor: pointer; border-radius: 4px; z-index: 10;">&gt;</button>
+</div>
+
+<script>
+    let currentIndex = 0;
+    const totalSlides = 3; // Tổng cộng có 3 hình ảnh
+    const sliderContainer = document.getElementById('sliderContainer');
+
+    function updateSlider() {
+        // Dịch chuyển khung hình dựa theo vị trí ảnh hiện tại
+        const offset = -currentIndex * (100 / totalSlides);
+        sliderContainer.style.transform = `translateX(${offset}%)`;
+    }
+
+    function nextSlide() {
+        // Nếu đang ở hình cuối cùng (chỉ số 2), tăng tiếp sẽ quay về hình đầu tiên (chỉ số 0)
+        currentIndex = (currentIndex + 1) % totalSlides;
+        updateSlider();
+    }
+
+    function prevSlide() {
+        // Nếu đang ở hình đầu tiên (chỉ số 0), lùi tiếp sẽ lập tức quay lại hình cuối cùng (chỉ số 2)
+        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+        updateSlider();
+    }
+</script>
+
+<h2>SẢN PHẨM NỔI BẬT</h2>
+<div class="sanpham">
+    <div class="item" style="border: 1px solid #cccccc; border-radius: 0px; padding: 15px; display: inline-block; text-align: center; background-color: #ffffff;">
+        <img src="img/yến 1 lớp sợi.jpg" alt="hình 1" width="200px" height="200px">
+        <p class="tensp">Yến 1 lớp sợi</p>
+        <p class="gia">2.600.000đ</p>
+    </div>  
+    <div class="item" style="border: 1px solid #cccccc; border-radius: 0px; padding: 15px; display: inline-block; text-align: center; background-color: #ffffff;">  
+        <img src="img/yến 1 lớp sợi 1.jpg" alt="hình 2" width="200px" height="200px">
+        <p class="tensp">Yến 1 lớp sợi</p>
+        <p class="gia">2.600.000đ</p>
+    </div>  
+    <div class="item" style="border: 1px solid #cccccc; border-radius: 0px; padding: 15px; display: inline-block; text-align: center; background-color: #ffffff;">  
+        <img src="img/yến 2 lớp sợi.jpg" alt="hình 3" width="200px" height="200px">
+        <p class="tensp">Yến 2 lớp sợi</p>
+        <p class="gia">2.800.000đ</p>
+    </div>
+
+    <div class="item" style="border: 1px solid #cccccc; border-radius: 0px; padding: 15px; display: inline-block; text-align: center; background-color: #ffffff;">    
+        <img src="img/yến thô.jpg" alt="hình 4" width="200px" height="200px">
+        <p class="tensp">Yến thô</p>
+        <p class="gia">1.800.000đ</p>
+    </div>
+</div>
+
+<div class="life-moment-fashion">
+    <h2>💖 Nghệ Thuật Yến Nguyệt Cho Mọi Khoảnh Khắc Của Cuộc Sống!</h2>
+    <p>
+        Nghệ thuật Yến Nguyệt không đơn thuần là việc tô điểm những lớp son phấn lên gương mặt, mà đó là sự kết hợp tinh tế giữa nét thanh tao, dịu dàng của chim yến và vẻ đẹp huyền ảo, sắc sảo của vầng trăng khuyết. Đây là cách bạn tôn vinh thế giới nội tâm sâu lắng và khẳng định bản sắc độc bản, đầy cuốn hút của chính mình. Mỗi nét cọ thanh mảnh, mỗi sắc màu chuyển pha mềm mại trong phong cách Yến Nguyệt đều là một ngôn ngữ không lời, phản chiếu tâm trạng kiêu sa, cá tính độc lập và ước mơ tỏa sáng của bạn ngày hôm đó.
+    </p>
+</div>
+
+<div class="footer-container">
+    <div class="social-links">
+        <p>Kết nối với chúng tôi:</p>
+        <a href="https://www.facebook.com/?locale=vi_VN" target="_blank" class="social-icon facebook">
+            <i class="fab fa-facebook-f"></i> Facebook
+        </a>
+        <a href="https://zalo.me/pc" target="_blank" class="social-icon zalo">
+            <i class="fas fa-comment-dots"></i> Zalo
+        </a>
+    </div>
+
+    <p class="copyright">
+        &copy; Shop yến nguyệt
+    </p>
+</div>
+</body>
+</html>
